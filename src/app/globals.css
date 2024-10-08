@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --foreground-rgb: 0, 0, 0; /* Black text */
+  --background-start-rgb: 255, 255, 255; /* White background */
+  --background-end-rgb: 255, 255, 255;   /* White background */
+  --text-color: rgb(var(--foreground-rgb)); /* Text color */
+  --background-color: rgb(var(--background-start-rgb)); /* Background color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255; /* White text */
+    --background-start-rgb: 255, 255, 255; /* White background */
+    --background-end-rgb: 255, 255, 255;   /* White background */
+    --text-color: rgb(var(--foreground-rgb)); /* Text color */
+    --background-color: rgb(var(--background-start-rgb)); /* Background color */
+  }
+}
+
+/* Apply background and text color globally */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
